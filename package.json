@@ -41,7 +41,7 @@
       "properties": {
         "remotefs.rootLabel": {
           "type": "string",
-          "description":  "label for the root folder.\n- `${folderName}`: name of the workspace folder the file is contained in (e.g. myFolder).\n- `${name}`: name of the remote.",
+          "description": "label for the root folder.\n- `${folderName}`: name of the workspace folder the file is contained in (e.g. myFolder).\n- `${name}`: name of the remote.",
           "default": "${folderName} — (Remote)"
         },
         "remotefs.remote": {
