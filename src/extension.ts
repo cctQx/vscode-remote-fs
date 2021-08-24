@@ -37,13 +37,21 @@ function registerCommand(
 }
 
 function getRemote() {
-  const remotes = getRemoteList();
+  let remotes = getRemoteList().sort( ( a, b ) => {
+    if ( a.name > b.name ) {
+      return 1
+    } else {
+      return -1
+    }
+    return 1
+  } );
   return vscode.window
     .showQuickPick(
       remotes.map(remote => {
         let description = `${remote.host}:${remote.port}`;
         if (remote.rootPath) {
-          description += ` at ${remote.rootPath}`;
+          let as = ( remote.rootLabel ) ? ` as ${remote.rootLabel}` : ''
+          description += ` at ${remote.rootPath}${as}`;
         }
         return {
           label: remote.name,
