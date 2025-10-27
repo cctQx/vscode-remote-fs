@@ -206,6 +206,7 @@ export default class SFTPFSProvider extends RemoteFileSystemProvider {
 
         stream.on('error', onEnd);
         stream.on('finish', onEnd);
+        stream.on('close', onEnd);
         stream.end(content);
       });
     });
