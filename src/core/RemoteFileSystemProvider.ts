@@ -33,7 +33,7 @@ export default abstract class RemoteFileSystemProvider implements vscode.FileSys
 
   private _emitter: vscode.EventEmitter<vscode.FileChangeEvent[]>;
   private _bufferedEvents: vscode.FileChangeEvent[];
-  private _fireSoonHandle: NodeJS.Timer;
+  private _fireSoonHandle: NodeJS.Timeout;
 
   constructor() {
     this._connectManager = new ConnectManager();
